@@ -1,0 +1,6 @@
+on: [push]
+jobs:
+  test:
+    runs-on: cmake
+    steps:
+      - run: echo All Good
