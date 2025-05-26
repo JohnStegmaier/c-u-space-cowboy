@@ -1,9 +1,11 @@
 on: [push]
 jobs:
   test:
+    # Referencing: https://code.forgejo.org/forgejo/end-to-end/src/branch/main/actions/example-docker-action/.forgejo/workflows/test.yml
     runs-on: cmake
     steps:
       - run: echo All Good
+      - uses: https://forge.stegmaier.dev/Jupdown/c-u-space-cowboy@main
+        with:
+          args: ${{ github.workspace }}/SOMEFILE
       - run: ls -lah
-      - run: pwd
-      - run: touch ./script/build.sh
