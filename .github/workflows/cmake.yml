@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Configure CMake
-        run: cmake -B build
+      - name: Generate makefiles
+        run: cmake .
 
-      - name: Build
-        run: cmake --build build
+      - name: Compile app
+        run: make
 
-      - name: Test (Optional)
-        run: cmake --build build --target test
+      - name: Run app
+        run: ./untitled
